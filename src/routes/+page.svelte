@@ -8,7 +8,7 @@
     } from '$lib/store'
     import { fade } from 'svelte/transition'
 
-    const MAX_HINTS_NBR = 50
+    const MAX_HINTS_NBR = 5
     const SHOW_CONFLICTS = true
 
     let showConflicts = SHOW_CONFLICTS
