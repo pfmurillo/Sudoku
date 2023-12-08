@@ -135,6 +135,10 @@
     }
 </script>
 
+<svelte:head>
+    <link rel="stylesheet" href="/poppins.css" />
+</svelte:head>
+
 <h1>Yet Another Sudoku Game</h1>
 
 {#if $sudoku.length === 81}
@@ -238,7 +242,7 @@
     :root {
         --fontcolor: rgb(20, 75, 100);
         --fontsize: 1.6rem;
-        --fontfamily: 'Gill Sans', sans-serif;
+        --fontfamily: 'Poppins', sans-serif;
     }
     h1 {
         width: fit-content;
