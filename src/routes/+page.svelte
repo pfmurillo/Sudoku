@@ -98,7 +98,7 @@
     const validInput = (value) => {
         if (!value) return true
         value = parseInt(value)
-        if (value >= 0 && value <= 9) {
+        if (value >= 1 && value <= 9) {
             return true
         }
         return false
@@ -343,7 +343,7 @@
         max-width: 580px;
         display: grid;
         grid-template-columns: repeat(9, 1fr);
-        gap: 8px;
+        /* gap: 8px;*/
         font-size: var(--fontsize);
         font-family: var(--fontfamily);
         color: var(--fontcolor);
@@ -354,8 +354,11 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 0px;
+        padding: 8px;
         border: 0px;
+    }
+    #sudoku > .cell:nth-child(n) {
+        border: 1px solid violet;
     }
     #sudoku > .cell > input {
         display: flex;
