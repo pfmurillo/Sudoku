@@ -343,29 +343,166 @@
         max-width: 580px;
         display: grid;
         grid-template-columns: repeat(9, 1fr);
-        /* gap: 8px;*/
         font-size: var(--fontsize);
         font-family: var(--fontfamily);
         color: var(--fontcolor);
-        box-sizing: border-box;
+        box-sizing: content-box;
+        border-top: 0px;
+        border-bottom: 0px;
+        border-left: 1px solid #606060;
+        border-right: 1px solid #606060;
     }
     #sudoku > .cell {
         aspect-ratio: 1;
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 8px;
-        border: 0px;
+        border: 1px solid #cfcfcf;
     }
-    #sudoku > .cell:nth-child(n) {
-        border: 1px solid violet;
+    /* sudoku upper side */
+    #sudoku > .cell:nth-child(1),
+    #sudoku > .cell:nth-child(2),
+    #sudoku > .cell:nth-child(3),
+    #sudoku > .cell:nth-child(4),
+    #sudoku > .cell:nth-child(5),
+    #sudoku > .cell:nth-child(6),
+    #sudoku > .cell:nth-child(7),
+    #sudoku > .cell:nth-child(8),
+    #sudoku > .cell:nth-child(9) {
+        border-top: 2px solid #606060;
+    }
+    /* sudoku upper side */
+    #sudoku > .cell:nth-child(73),
+    #sudoku > .cell:nth-child(74),
+    #sudoku > .cell:nth-child(75),
+    #sudoku > .cell:nth-child(76),
+    #sudoku > .cell:nth-child(77),
+    #sudoku > .cell:nth-child(78),
+    #sudoku > .cell:nth-child(79),
+    #sudoku > .cell:nth-child(80),
+    #sudoku > .cell:nth-child(81) {
+        border-bottom: 2px solid #606060;
+    }
+    #sudoku > .cell:nth-child(1),
+    #sudoku > .cell:nth-child(10),
+    #sudoku > .cell:nth-child(19),
+    #sudoku > .cell:nth-child(28),
+    #sudoku > .cell:nth-child(37),
+    #sudoku > .cell:nth-child(46),
+    #sudoku > .cell:nth-child(55),
+    #sudoku > .cell:nth-child(64),
+    #sudoku > .cell:nth-child(73) {
+        border-left: 1px solid #606060;
+    }
+    #sudoku > .cell:nth-child(9),
+    #sudoku > .cell:nth-child(18),
+    #sudoku > .cell:nth-child(27),
+    #sudoku > .cell:nth-child(36),
+    #sudoku > .cell:nth-child(45),
+    #sudoku > .cell:nth-child(54),
+    #sudoku > .cell:nth-child(63),
+    #sudoku > .cell:nth-child(72),
+    #sudoku > .cell:nth-child(81) {
+        border-right: 1px solid #606060;
+    }
+    /* first horizontal line*/
+    #sudoku > .cell:nth-child(19),
+    #sudoku > .cell:nth-child(20),
+    #sudoku > .cell:nth-child(21),
+    #sudoku > .cell:nth-child(22),
+    #sudoku > .cell:nth-child(23),
+    #sudoku > .cell:nth-child(24),
+    #sudoku > .cell:nth-child(25),
+    #sudoku > .cell:nth-child(26),
+    #sudoku > .cell:nth-child(27) {
+        border-bottom: 1px solid #606060;
+    }
+    #sudoku > .cell:nth-child(28),
+    #sudoku > .cell:nth-child(29),
+    #sudoku > .cell:nth-child(30),
+    #sudoku > .cell:nth-child(31),
+    #sudoku > .cell:nth-child(32),
+    #sudoku > .cell:nth-child(33),
+    #sudoku > .cell:nth-child(34),
+    #sudoku > .cell:nth-child(35),
+    #sudoku > .cell:nth-child(36) {
+        border-top: 1px solid #606060;
+    }
+    /* second horizontal line*/
+    #sudoku > .cell:nth-child(46),
+    #sudoku > .cell:nth-child(47),
+    #sudoku > .cell:nth-child(48),
+    #sudoku > .cell:nth-child(49),
+    #sudoku > .cell:nth-child(50),
+    #sudoku > .cell:nth-child(51),
+    #sudoku > .cell:nth-child(52),
+    #sudoku > .cell:nth-child(53),
+    #sudoku > .cell:nth-child(54) {
+        border-bottom: 1px solid #606060;
+    }
+    #sudoku > .cell:nth-child(55),
+    #sudoku > .cell:nth-child(56),
+    #sudoku > .cell:nth-child(57),
+    #sudoku > .cell:nth-child(58),
+    #sudoku > .cell:nth-child(59),
+    #sudoku > .cell:nth-child(60),
+    #sudoku > .cell:nth-child(61),
+    #sudoku > .cell:nth-child(62),
+    #sudoku > .cell:nth-child(63) {
+        border-top: 1px solid #606060;
+    }
+    /* first vertical line*/
+    #sudoku > .cell:nth-child(3),
+    #sudoku > .cell:nth-child(12),
+    #sudoku > .cell:nth-child(21),
+    #sudoku > .cell:nth-child(30),
+    #sudoku > .cell:nth-child(39),
+    #sudoku > .cell:nth-child(48),
+    #sudoku > .cell:nth-child(57),
+    #sudoku > .cell:nth-child(66),
+    #sudoku > .cell:nth-child(75) {
+        border-right: 1px solid #606060;
+    }
+    #sudoku > .cell:nth-child(4),
+    #sudoku > .cell:nth-child(13),
+    #sudoku > .cell:nth-child(22),
+    #sudoku > .cell:nth-child(31),
+    #sudoku > .cell:nth-child(40),
+    #sudoku > .cell:nth-child(49),
+    #sudoku > .cell:nth-child(58),
+    #sudoku > .cell:nth-child(67),
+    #sudoku > .cell:nth-child(76) {
+        border-left: 1px solid #606060;
+    }
+    /* second vertical line*/
+    #sudoku > .cell:nth-child(6),
+    #sudoku > .cell:nth-child(15),
+    #sudoku > .cell:nth-child(24),
+    #sudoku > .cell:nth-child(33),
+    #sudoku > .cell:nth-child(42),
+    #sudoku > .cell:nth-child(51),
+    #sudoku > .cell:nth-child(60),
+    #sudoku > .cell:nth-child(69),
+    #sudoku > .cell:nth-child(78) {
+        border-right: 1px solid #606060;
+    }
+    #sudoku > .cell:nth-child(7),
+    #sudoku > .cell:nth-child(16),
+    #sudoku > .cell:nth-child(25),
+    #sudoku > .cell:nth-child(34),
+    #sudoku > .cell:nth-child(43),
+    #sudoku > .cell:nth-child(52),
+    #sudoku > .cell:nth-child(61),
+    #sudoku > .cell:nth-child(70),
+    #sudoku > .cell:nth-child(79) {
+        border-left: 1px solid #606060;
     }
     #sudoku > .cell > input {
         display: flex;
         margin: 0;
         padding: 0;
         width: 100%;
-        border-radius: 4px;
+        /*border-radius: 4px;*/
         aspect-ratio: 1;
         text-align: center;
         font-size: var(--fontsize);
@@ -373,6 +510,7 @@
         color: var(--fontcolor);
         border: 2px solid #efefef;
         outline: none;
+        background-color: #efefef;
     }
     #sudoku > .cell > input:focus {
         border-color: rgb(20, 75, 100);
@@ -392,7 +530,7 @@
         width: 100%;
         aspect-ratio: 1;
         animation: popHint 2200ms 1;
-        border-radius: 4px;
+        /*border-radius: 4px;*/
     }
     @keyframes popError {
         from {
