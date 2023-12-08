@@ -137,6 +137,7 @@
 
 <svelte:head>
     <link rel="stylesheet" href="/poppins.css" />
+    <link rel="stylesheet" href="/poppins-light.css" />
 </svelte:head>
 
 <h1>Yet Another Sudoku Game</h1>
@@ -243,20 +244,25 @@
         --fontcolor: rgb(20, 75, 100);
         --fontsize: 1.6rem;
         --fontfamily: 'Poppins', sans-serif;
+        --fontfamilylight: 'PoppinsLight', sans-serif;
     }
     h1 {
         width: fit-content;
-        margin: 36px auto;
+        margin: 36px auto 0px auto;
         color: var(--fontcolor);
         font-family: var(--fontfamily);
-        font-weight: 500;
-        font-size: 2.5rem;
+        font-size: 3rem;
+        padding: 0px 10vw;
+    }
+    @media (max-width: 880px) {
+        h1 {
+            font-size: 2rem;
+        }
     }
     p {
-        font-family: var(--fontfamily);
-        font-size: 1.4rem;
-        font-weight: 300;
-        line-height: 48px;
+        font-family: var(--fontfamilylight);
+        font-size: 1.3rem;
+        line-height: 40px;
     }
     #disclaimer {
         padding: 48px;
@@ -301,6 +307,7 @@
         padding: 6px 18px;
         margin: 0px 0px 24px 0px;
         cursor: pointer;
+        font-family: var(--fontfamily);
         color: var(--fontcolor);
         border: 2px solid antiquewhite;
         border-radius: 4px;
