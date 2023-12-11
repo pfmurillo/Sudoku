@@ -12,6 +12,8 @@
     const SHOW_CONFLICTS = true
 
     let showConflicts = SHOW_CONFLICTS
+    let showDisclaimer = true
+    let showContainer = false
     let showDialog = false
     let conflicts = []
     let shown = []
@@ -27,6 +29,12 @@
         shown = []
         hints_nbr = 0
         sudoku.update(generateGrid)
+        if (!showContainer) {
+            showDisclaimer = false
+            setTimeout(() => {
+                showContainer = true
+            }, 400)
+        }
     }
 
     const toggleConflicts = () => {
@@ -142,8 +150,8 @@
 
 <h1>Yet Another Sudoku Game</h1>
 
-{#if $sudoku.length === 81}
-    <div id="container">
+{#if showContainer}
+    <div id="container" transition:fade={{ duration: 200 }}>
         <div>
             <div id="sudoku">
                 {#each $sudoku as { id, value, visible, input }}
@@ -182,8 +190,9 @@
             <button on:click={newGame} class="start">Generate New Grid</button>
         </div>
     </div>
-{:else}
-    <div id="disclaimer">
+{/if}
+{#if showDisclaimer}
+    <div id="disclaimer" transition:fade={{ duration: 200 }}>
         <p>
             The rules for Sudoku are simple. A 9×9 square must be filled in with
             numbers from 1-9 with no repeated numbers in each line, horizontally
@@ -194,7 +203,6 @@
         <button on:click={newGame} class="validate">Start Game</button>
     </div>
 {/if}
-
 {#if showDialog}
     <div id="dialog" transition:fade={{ duration: 80 }}>
         <div>
@@ -210,13 +218,14 @@
     </div>
 {/if}
 
-<footer>
-    made with ❤️ and Svelte by <a href="https://pfmurillo.github.io/"
-        >pfmurillo</a
-    >
-</footer>
-
 <style>
+    #disclaimer,
+    #container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
     #dialog {
         position: fixed;
         top: 0;
@@ -558,16 +567,5 @@
         to {
             background-color: transparent;
         }
-    }
-    footer {
-        padding: 20px;
-        color: var(--fontcolor);
-        text-align: center;
-        font-family: var(--fontfamily);
-        margin-top: 48px;
-        font-size: 1.4rem;
-    }
-    footer a {
-        color: var(--fontcolor);
     }
 </style>

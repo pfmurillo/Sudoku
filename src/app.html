@@ -5,8 +5,32 @@
         <link rel="icon" href="%sveltekit.assets%/favicon.png" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         %sveltekit.head%
+        <style>
+            body {
+                min-height: 100vh;
+                display: flex;
+                flex-direction: column;
+                padding: 0px;
+                margin: 0px;
+            }
+            footer {
+                padding: 20px;
+                color: var(--fontcolor);
+                text-align: center;
+                font-family: var(--fontfamily);
+                margin: auto 0px 0px 0px;
+                font-size: 1.4rem;
+            }
+            footer a {
+                color: var(--fontcolor);
+            }
+        </style>
     </head>
     <body data-sveltekit-preload-data="hover">
         <div style="display: contents">%sveltekit.body%</div>
+        <footer>
+            made with ❤️ and Svelte by
+            <a href="https://pfmurillo.github.io/">pfmurillo</a>
+        </footer>
     </body>
 </html>
